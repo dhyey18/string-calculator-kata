@@ -1,6 +1,9 @@
 export class StringCalculator {
   add(numbers: string): number {
     if (!numbers) return 0;
+
+    // Convert the escaped newlines back to actual newlines
+    numbers = numbers.replace(/\\n/g, "\n");
   
     let delimiter = ',';
     if (numbers.startsWith('//')) {
