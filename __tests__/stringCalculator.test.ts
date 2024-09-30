@@ -22,9 +22,14 @@ describe('StringCalculator', () => {
     expect(calculator.add("1,2")).toBe(3);
   });
 
-  // Fifth Test: Handle Newline Separators
+  // Fourth Test: Handle Newline Separators
   test('should handle newlines as delimiters', () => {
     expect(calculator.add("1\n2,3")).toBe(6);
+  });
+
+  // Fifth Test: Custom Delimiters
+  test('should support custom delimiters', () => {
+    expect(calculator.add('//;\n1;2')).toBe(3);
   });
 
 });
