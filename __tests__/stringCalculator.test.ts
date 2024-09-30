@@ -12,4 +12,9 @@ describe('StringCalculator', () => {
     expect(calculator.add("")).toBe(0);
   });
 
+  // Second Test: Handle Single Number
+  test('should return the number for a single number string', () => {
+    expect(calculator.add("1")).toBe(1);
+  });
+
 });
