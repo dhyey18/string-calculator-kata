@@ -3,6 +3,7 @@ import DarkModeToggle from './components/DarkModeToggle';
 import InputField from './components/InputField';
 import CalculateButton from './components/CalculateButton';
 import ResultDisplay from './components/ResultDisplay';
+import ErrorDisplay from './components/ErrorDisplay';
 import axios from 'axios';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <InputField numbers={numbers} setNumbers={setNumbers} />
         <CalculateButton handleCalculate={handleCalculate} />
         <ResultDisplay result={result} />
+        <ErrorDisplay error={error} />
       </div>
     </div>
   );
