@@ -2,7 +2,14 @@ export class StringCalculator {
   add(numbers: string): number {
     if (!numbers) return 0;
   
-    const numArray = numbers.replace(/\n/g, ',').split(',').map(num => parseInt(num, 10));
+    let delimiter = ',';
+    if (numbers.startsWith('//')) {
+      const parts = numbers.split('\n');
+      delimiter = parts[0].substring(2);
+      numbers = parts[1];
+    }
+  
+    const numArray = numbers.replace(/\n/g, delimiter).split(delimiter).map(num => parseInt(num, 10));
     return numArray.reduce((sum, num) => sum + num, 0);
   }
 }
