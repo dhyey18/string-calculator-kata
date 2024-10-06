@@ -37,9 +37,14 @@ describe('StringCalculator', () => {
     expect(() => calculator.add('1,-2')).toThrow('negative numbers not allowed: -2');
   });
 
-  // Sixth Test: Should Ignore Numbers Greater than 1000
+  // Seven Test: Should Ignore Numbers Greater than 1000
   test('should ignore numbers greater than 1000', () => {
     expect(calculator.add("2,1001")).toBe(2);
+  });
+
+  // Eight Test: When custom dilimeter is * multiply the numbers
+  test('When custom dilimeter is * multiply the numbers', () => {
+    expect(calculator.add("//*\n2*2")).toBe(4);
   });
 
 });
